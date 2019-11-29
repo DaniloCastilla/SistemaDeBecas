@@ -1,0 +1,32 @@
+#tablaRegistro{
+    text-align: center;
+    background-color: #47b6ff;
+    font-size: 25px;
+    padding: 5px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+#tablaLogeo{
+    text-align: center;
+    background-color: #47b6ff;
+    font-size: 25px;
+    padding: 5px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+input{
+    font-size: 20px;
+}
+
+#bienvenida{
+    text-align: center;
+}
+
+#ingresoU{
+    text-align: center;
+    background-color: #47b6ff;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="imagenes/icons8-lock-50.ico">
+    <link rel="stylesheet" href="./css/stylesheet01.css">
+    <title>Registro de Usuarios</title>
+</head>
+<body>
+    <h1 id="bienvenida">Bienvenidos, por favor registrese</h1>  
+    <section>
+        <form action="./insertarUsuario.php" method="POST" name='form1' onsubmit='return validar();' id="tablaRegistro">
+            <div>
+                <input type="text" id="nombre" name="Nombre" placeholder="Nombre" onblur="this.placeholder = 'Nombre'">
+            </div>
+            <div>
+                <input type="text" id="apellido"name="Apellido" placeholder="Apellido" onblur="this.placeholder = 'Apellido'">
+            </div>
+            <div>
+                <input type="email" id="email" name="Email" placeholder="Email" onblur="this.placeholder = 'Email'">
+            </div>
+            <div>
+                <input type="text" id="username"name="Username" placeholder="Username" onblur="this.placeholder = 'Username'">
+            </div>
+            <div>
+                <input type="password" id="password" name="Contraseña" placeholder="Contraseña" onblur="this.placeholder = 'Contraseña'">
+            </div>
+            <div>
+                <button type="submit">Registrarse</button>
+            </div>
+        </form>
+        
+        <script type='text/javascript'>
+
+        /*VALIDACION DE FORMULARIO*/
+
+        function validar(){
+   
+            var valido = true;
+   
+            if(document.getElementById('nombre').value.length < 2 && (! isNaN(document.getElementById('nombre')))){
+                valido = false;
+                alert("Tiene que ser un nombre mas largo y sin numeros");
+            }
+    
+            if(document.getElementById('apellido').value.length < 2 && (! isNaN(document.getElementById('apellido')))){
+                valido = false;
+                alert("Tiene que ser un apellido mas largo y sin numeros");
+            }
+            var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+            var email = document.form1.email.value;
+            
+            if (!expresion.test(email)){
+                valido = false;
+            }
+            if(document.getElementById('username').value < 4){
+                valido = false;
+                alert("Intenta otro usuario");
+            }
+
+            if(document.getElementById('password').value < 4){
+                valido = false;
+                alert("Tiene que ser una contraseña mas larga");
+            }
+            if(!valido){
+                alert('Algunos campos no están correctos, vuelva a revisarlos');
+            }
+    
+            return valido;
+        }
+    
+    </script>
+    </section>
+    <section>
+        <span style="text-align: center"><h2> O si ya estas registrado, <a href="logeo.html">Ingresa aquí</a></h2></span>
+    </section>
+</body>
+</html>
